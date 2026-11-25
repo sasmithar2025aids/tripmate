@@ -1,0 +1,69 @@
+
+# =========================
+# Node.js / React
+# =========================
+node_modules/
+frontend/node_modules/
+
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# =========================
+# Build Files
+# =========================
+dist/
+dist-ssr/
+build/
+*.local
+
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# Java / Spring Boot
+# =========================
+target/
+*.class
+*.jar
+*.war
+
+# =========================
+# Editor Files
+# =========================
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# =========================
+# Operating System
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Temporary Files
+# =========================
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+
+# =========================
+# Other
+# =========================
+coverage/
+.cache/

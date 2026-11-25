@@ -1,0 +1,47 @@
+
+# Node modules
+node_modules/
+frontend/node_modules/
+
+# Build files
+dist/
+dist-ssr/
+build/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Java / Spring Boot
+target/
+*.class
+*.jar
+*.war
+
+# Editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+
+# Cache and coverage
+.cache/
+coverage/
