@@ -1,9 +1,9 @@
-function AdminLogin() {
+function ExploreTrips() {
   return (
     <div>
-      <h1>Admin Login</h1>
+      <h1>Explore Trips</h1>
     </div>
   );
 }
 
-export default AdminLogin;
+export default ExploreTrips;

@@ -16,18 +16,31 @@ import Profile from "./pages/Profile";
 function App() {
   return (
     <Routes>
+
       <Route path="/" element={<Login />} />
+
       <Route path="/admin-login" element={<AdminLogin />} />
+
       <Route path="/register" element={<Register />} />
+
       <Route path="/dashboard" element={<Dashboard />} />
+
       <Route path="/create-trip" element={<CreateTrip />} />
+
       <Route path="/my-trips" element={<MyTrips />} />
+
       <Route path="/explore-trips" element={<ExploreTrips />} />
+
       <Route path="/trip-details" element={<TripDetails />} />
+
       <Route path="/itinerary" element={<Itinerary />} />
+
       <Route path="/expenses" element={<Expenses />} />
+
       <Route path="/group-chat" element={<GroupChat />} />
+
       <Route path="/profile" element={<Profile />} />
+
     </Routes>
   );
 }

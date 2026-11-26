@@ -1,9 +1,9 @@
-function AdminLogin() {
+function GroupChat() {
   return (
     <div>
-      <h1>Admin Login</h1>
+      <h1>Group Chat</h1>
     </div>
   );
 }
 
-export default AdminLogin;
+export default GroupChat;
