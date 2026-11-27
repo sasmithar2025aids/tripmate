@@ -1,48 +1,59 @@
-import { Routes, Route } from "react-router-dom";
-
-import Login from "./pages/Login";
-import AdminLogin from "./pages/AdminLogin";
-import Register from "./pages/Register";
-import Dashboard from "./pages/Dashboard";
-import CreateTrip from "./pages/CreateTrip";
-import MyTrips from "./pages/MyTrips";
-import ExploreTrips from "./pages/ExploreTrips";
-import TripDetails from "./pages/TripDetails";
-import Itinerary from "./pages/Itinerary";
-import Expenses from "./pages/Expenses";
-import GroupChat from "./pages/GroupChat";
-import Profile from "./pages/Profile";
-
+import { Routes, Route, Navigate } from "react-router-dom";
+import Login from "./pages/login";
+import AdminLogin from "./pages/adminlogin";
+import Register from "./pages/register";
+import AdminDashboard from "./pages/admin/admindashboard";
+import Dashboard from "./pages/user/dashboard";
+import CreateTrip from "./pages/user/createtrip";
+import MyTrips from "./pages/user/mytrips";
+import ExploreTrips from "./pages/user/exploretrips";
+import TripDetails from "./pages/user/tripdetails";
+import Itinerary from "./pages/user/itinerary";
+import Expenses from "./pages/user/expenses";
+import GroupChat from "./pages/user/groupchat";
+import InviteFriends from "./pages/user/invitefriends";
+import Profile from "./pages/user/profile";
+import ManageTrips from "./pages/admin/managetrips";
+import ManageUsers from "./pages/admin/manageusers";
+import Reports from "./pages/admin/reports";
 function App() {
+
   return (
     <Routes>
 
-      <Route path="/" element={<Login />} />
+      {/* Default Page */}
+      <Route path="/" element={<Navigate to="/login" />} />
 
-      <Route path="/admin-login" element={<AdminLogin />} />
-
+      {/* Login Pages */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/adminlogin" element={<AdminLogin />} />
       <Route path="/register" element={<Register />} />
 
+      {/* Admin */}
+      <Route path="/admindashboard" element={<AdminDashboard />} />
+
+      {/* User Dashboard */}
       <Route path="/dashboard" element={<Dashboard />} />
 
-      <Route path="/create-trip" element={<CreateTrip />} />
-
-      <Route path="/my-trips" element={<MyTrips />} />
-
-      <Route path="/explore-trips" element={<ExploreTrips />} />
-
-      <Route path="/trip-details" element={<TripDetails />} />
-
+      {/* User Modules */}
+      <Route path="/createtrip" element={<CreateTrip />} />
+      <Route path="/mytrips" element={<MyTrips />} />
+      <Route path="/exploretrips" element={<ExploreTrips />} />
+      <Route path="/tripdetails" element={<TripDetails />} />
       <Route path="/itinerary" element={<Itinerary />} />
-
       <Route path="/expenses" element={<Expenses />} />
-
-      <Route path="/group-chat" element={<GroupChat />} />
-
+      <Route path="/groupchat" element={<GroupChat />} />
+      <Route path="/invitefriends" element={<InviteFriends />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/managetrips" element={<ManageTrips />} />
+      <Route path="/manageusers" element={<ManageUsers />} />
+      <Route path="/reports" element={<Reports />} />
+      
+  
 
     </Routes>
   );
+
 }
 
 export default App;

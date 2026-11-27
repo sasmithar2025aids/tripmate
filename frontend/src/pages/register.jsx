@@ -1,67 +1,87 @@
-import { useForm } from 'react-hook-form'
-import { useNavigate } from 'react-router-dom'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { registerSchema } from '../components/formschema/registerschema'
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import "../App.css";
 
 function Register() {
+    const navigate = useNavigate();
 
-    const navigate = useNavigate()
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
 
-    const { register, handleSubmit, formState: { errors } } = useForm({
-        resolver: zodResolver(registerSchema)
-    })
+    const handleRegister = (e) => {
+        e.preventDefault();
 
-    function onSubmit(data) {
-        console.log(data)
-        alert("Registration Successful")
-        navigate("/")
-    }
+        if (password !== confirmPassword) {
+            alert("Passwords do not match");
+            return;
+        }
+
+        alert("Registration successful!");
+        navigate("/login");
+    };
 
     return (
-        <>
-            <h1>TripMate - Travel Planning & Group Trip Management</h1>
+        <div className="register-page">
+            <div className="register-card">
 
-            <h2>User Registration</h2>
+                <h1>TripMate</h1>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
+                <h2>User Registration</h2>
 
-                <label>Name:</label>
-                <input
-                    placeholder="Enter your name"
-                    type="text"
-                    {...register("name")}
-                />
-                <p>{errors.name?.message}</p>
+                <form onSubmit={handleRegister}>
 
-                <label>Email:</label>
-                <input
-                    placeholder="Enter your email"
-                    type="email"
-                    {...register("email")}
-                />
-                <p>{errors.email?.message}</p>
+                    <input
+                        type="text"
+                        placeholder="Enter your name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                    />
 
-                <label>Password:</label>
-                <input
-                    placeholder="Enter password"
-                    type="password"
-                    {...register("password")}
-                />
-                <p>{errors.password?.message}</p>
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
 
-                <label>Confirm Password:</label>
-                <input
-                    placeholder="Confirm your password"
-                    type="password"
-                    {...register("confirmPassword")}
-                />
-                <p>{errors.confirmPassword?.message}</p>
+                    <input
+                        type="password"
+                        placeholder="Enter your password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
 
-                <button type="submit">Register</button>
+                    <input
+                        type="password"
+                        placeholder="Confirm your password"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        required
+                    />
 
-            </form>
-        </>
-    )
+                    <button type="submit" className="register-btn">
+                        Register
+                    </button>
+
+                </form>
+
+                <p>Already have an account?</p>
+
+                <button
+                    className="register-login-btn"
+                    onClick={() => navigate("/login")}
+                >
+                    Login
+                </button>
+
+            </div>
+        </div>
+    );
 }
 
-export default Register
+export default Register;
